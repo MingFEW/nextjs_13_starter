@@ -1,0 +1,4 @@
+.picture img {
+  object-fit: none;
+  object-position: center 70%;
+}
