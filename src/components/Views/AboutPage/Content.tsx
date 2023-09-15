@@ -10,7 +10,7 @@ const Content = async () => {
       <Suspense fallback={<p>LOADING...</p>}>
         <article>
           {data.title && <h2 className="mb-4 text-2xl capitalize">{data.title}</h2>}
-          {data.body && <div className="blog-ct text-md lg:text-xl">{data.body}</div>}
+          {data.body && <div className="blog-ct text-md tracking-wider text-[#666666] lg:text-[24px]">{data.body}</div>}
         </article>
       </Suspense>
     </div>

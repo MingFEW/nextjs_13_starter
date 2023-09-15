@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Container from './Container'
+import Nav from './Nav'
 
 function Header() {
   return (
@@ -13,31 +14,7 @@ function Header() {
           </Link>
         </div>
         <div className="nav-left-side">
-          <nav>
-            <ul className="flex flex-row items-center gap-10 text-xl">
-              <li>
-                <Link href="/" className="font-light text-[#999999] transition-colors hover:text-white hover:underline">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="font-light text-[#999999] transition-colors hover:text-white hover:underline"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blogs"
-                  className="font-light text-[#999999] transition-colors hover:text-white hover:underline"
-                >
-                  Blog
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Nav />
         </div>
       </div>
     </Container>
