@@ -3,7 +3,6 @@
   object-position: center 50%;
 }
 
-
 /* LARGER 1280 */
 @media screen(xl) {
   .picture img {
@@ -11,4 +10,3 @@
     object-position: center 90%;
   }
 }
-

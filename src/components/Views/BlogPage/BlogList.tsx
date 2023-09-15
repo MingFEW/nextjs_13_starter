@@ -7,7 +7,7 @@ function BlogList({ dataList }: IBlogListProps) {
     <div className="pt-8">
       {dataList.length <= 0 && <p>No Post</p>}
       {dataList.length > 0 && (
-          <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           {dataList.map((itm: IPost) => {
             const { id, title, body } = itm
             return (
