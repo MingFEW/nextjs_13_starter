@@ -1,11 +1,10 @@
-/* eslint-disable tailwindcss/no-custom-classname */
+import type { Metadata } from 'next/types'
 import React, { Suspense } from 'react'
 
 import { Container } from '@/components/layout'
-import { Metadata } from 'next/types'
+import { BlogList } from '@/components/Views/BlogPage'
 import { getPosts } from '@/services/posts.api'
 import './styles.css'
-import { BlogList } from '@/components/Views/BlogPage'
 
 export const metadata: Metadata = {
   title: 'Blog Page | Next13 Starter',
@@ -20,8 +19,7 @@ const page = async () => {
       <div className="inner py-6">
         <h1 className="mb-2 text-2xl font-bold">Blog</h1>
         <div className="page-desc pt-8">I will get Posts and show in a list (Nested Comp) - SSR</div>
-        
-        <Suspense fallback={<p>LOADING...</p>}>
+        <Suspense fallback={<p>LOADING....</p>}>
           <BlogList dataList={dataList} />
         </Suspense>
       </div>

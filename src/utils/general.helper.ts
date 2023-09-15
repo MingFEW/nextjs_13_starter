@@ -1,14 +1,13 @@
 export const isEmpty = (value: any): value is boolean => {
-  if (value === null || value === undefined) return true;
-  if (typeof value === "number") return false;
-  if (Array.isArray(value)) return !value.length;
-  if (Object.prototype.toString.call(value) === "[object Date]") return false;
-  if (typeof value === "object") return Object.keys(value).length === 0;
-  if (Object.prototype.toString.call(value) === "[object String]")
-    return value === "";
+  if (value === null || value === undefined) return true
+  if (typeof value === 'number') return false
+  if (Array.isArray(value)) return !value.length
+  if (Object.prototype.toString.call(value) === '[object Date]') return false
+  if (typeof value === 'object') return Object.keys(value).length === 0
+  if (Object.prototype.toString.call(value) === '[object String]') return value === ''
 
-  return false;
-};
+  return false
+}
 
 /**
  * Cuts a given text to a specified number of words and adds ellipsis if needed.
@@ -18,11 +17,11 @@ export const isEmpty = (value: any): value is boolean => {
  * @returns {string} The shortened text with ellipsis if necessary.
  */
 export const cutText = (txt: string, num: number): string => {
-  const words = txt.split(" ");
+  const words = txt.split(' ')
   if (words.length <= num) {
-    return txt;
+    return txt
   }
 
-  const truncatedWords = words.slice(0, num);
-  return `${truncatedWords.join(" ")}...`;
-};
+  const truncatedWords = words.slice(0, num)
+  return `${truncatedWords.join(' ')}...`
+}
