@@ -4,7 +4,7 @@ const Container = ({
     children: React.ReactNode;
   }) => {
   return (
-    <div className="container mx-auto">{children}</div>
+    <div className="container mx-auto px-[20px] md:px-0">{children}</div>
   )
 }
 

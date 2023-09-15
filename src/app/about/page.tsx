@@ -1,21 +1,27 @@
+/* eslint-disable tailwindcss/no-custom-classname */
+import React from 'react'
 
-import React from "react";
-import { Container } from "@/components/layout";
-import Hero from "@/components/Hero";
+import { Metadata } from 'next/types';
+import Hero from '@/components/Hero'
+import { Container } from '@/components/layout'
+import { Content } from '@/components/Views/AboutPage'
 
+
+export const metadata: Metadata = {
+  title: "About Page | Next13 Starter",
+  description: "Get DATA SSR",
+};
 
 const page = () => {
   return (
-    <>
-      <Container>
-        <div className="inner py-6">
-          <h1 className="text-2xl font-bold mb-2">About us</h1>
-          <Hero />
-          Content herer
-        </div>
-      </Container>
-    </>
-  );
-}; 
+    <Container>
+      <div className="inner py-6">
+        <h1 className="mb-2 text-2xl font-bold">About us</h1>
+        <Hero />
+        <Content />
+      </div>
+    </Container>
+  )
+}
 
-export default page;
+export default page

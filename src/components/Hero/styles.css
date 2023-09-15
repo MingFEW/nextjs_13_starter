@@ -1,4 +1,14 @@
 .picture img {
   object-fit: none;
-  object-position: center 70%;
+  object-position: center 50%;
 }
+
+
+/* LARGER 1280 */
+@media screen(xl) {
+  .picture img {
+    object-fit: none;
+    object-position: center 90%;
+  }
+}
+

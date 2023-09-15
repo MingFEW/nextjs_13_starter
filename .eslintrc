@@ -11,11 +11,13 @@
     "es6": true
   },
   "extends": [
+    "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
     "airbnb",
     "airbnb-typescript",
     "plugin:tailwindcss/recommended",
     "plugin:import/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "stylelint-config-standard-scss"
   ],
   "rules": {
     "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
