@@ -25,3 +25,10 @@ export const cutText = (txt: string, num: number): string => {
   const truncatedWords = words.slice(0, num)
   return `${truncatedWords.join(' ')}...`
 }
+
+export function isActiveMenu(menuItemHref: string, pathname: string): boolean {
+  if (menuItemHref.includes(pathname, 0) && pathname !== '/') {
+    return true
+  }
+  return false
+}

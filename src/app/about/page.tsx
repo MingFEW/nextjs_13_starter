@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <Container>
-      <div className="inner py-6">
+      <div className="inner pb-44 pt-6">
         <h1 className="mb-2 text-2xl font-bold">About us</h1>
         <Hero />
         <Content />
