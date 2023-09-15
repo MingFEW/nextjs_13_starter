@@ -1,55 +1,108 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "unused-imports", "import"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "env": {
     "node": true,
     "browser": true,
     "es6": true
   },
   "extends": [
-    "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
     "airbnb",
     "airbnb-typescript",
     "plugin:tailwindcss/recommended",
     "plugin:import/recommended",
     "plugin:prettier/recommended",
-    "stylelint-config-standard-scss"
+    "next/core-web-vitals" // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
   ],
   "rules": {
-    "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
-    "import/extensions": 0, // Avoid missing file extension errors, TypeScript already provides a similar feature
-    "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
-    "react/require-default-props": 0, // Allow non-defined react props as undefined
-    "react/jsx-props-no-spreading": 0, // _app.tsx uses spread operator and also, react-hook-form
-    "@next/next/no-img-element": 0, // We currently not using next/image because it isn't supported with SSG mode
-    "@typescript-eslint/comma-dangle": 0, // Avoid conflict rule between Eslint and Prettier
-    "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
-    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"], // Overrides Airbnb configuration and enable no-restricted-syntax
-    "import/no-unresolved": 0,
-    "import/prefer-default-export": 0, // Named export is easier to refactor automatically
-    "@typescript-eslint/no-unused-vars": 0,
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
+    "prettier/prettier": [
       "error",
       {
-        "argsIgnorePattern": "^_"
-      }
-    ],
-    "import/order": [
-      "error",
-      {
-        "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
-        "newlines-between": "always",
-        "pathGroupsExcludedImportTypes": ["builtin"],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+        "singleQuote": true,
+        "endOfLine": "auto"
       }
     ]
-  }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "excludedFiles": [
+        "*.test.js",
+        "*.js"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "import",
+        "tailwindcss"
+      ],
+      "rules": {
+        "no-console": [
+          "warn",
+          {
+            "allow": [
+              "info",
+              "warn",
+              "error"
+            ]
+          }
+        ],
+        "import/extensions": 0, // Avoid missing file extension errors, TypeScript already provides a similar feature
+        "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+        "react/require-default-props": 0, // Allow non-defined react props as undefined
+        "react/jsx-props-no-spreading": 0, // _app.tsx uses spread operator and also, react-hook-form
+        "@next/next/no-img-element": 0, // We currently not using next/image because it isn't supported with SSG mode
+        "@typescript-eslint/comma-dangle": 0, // Avoid conflict rule between Eslint and Prettier
+        "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement"
+        ], // Overrides Airbnb configuration and enable no-restricted-syntax
+        "import/no-unresolved": 0,
+        "import/prefer-default-export": 0, // Named export is easier to refactor automatically
+        "@typescript-eslint/no-unused-vars": 0,
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "tailwindcss/no-custom-classname": 0,
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              [
+                "builtin",
+                "external"
+              ],
+              "internal",
+              [
+                "parent",
+                "sibling",
+                "index"
+              ]
+            ],
+            "newlines-between": "always",
+            "pathGroupsExcludedImportTypes": [
+              "builtin"
+            ],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

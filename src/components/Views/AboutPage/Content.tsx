@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+
 import { getPostById } from '@/services/posts.api'
 
 const Content = async () => {
@@ -8,9 +9,9 @@ const Content = async () => {
     <div className="pt-8">
       <Suspense fallback={<p>LOADING...</p>}>
         <article>
-            {data.title && <h2 className="text-2xl capitalize mb-4">{data.title}</h2>}
+          {data.title && <h2 className="mb-4 text-2xl capitalize">{data.title}</h2>}
           {data.body && <div className="blog-ct text-md lg:text-xl">{data.body}</div>}
-          </article>
+        </article>
       </Suspense>
     </div>
   )

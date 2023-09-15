@@ -1,16 +1,15 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import type { Metadata } from 'next/types'
 import React from 'react'
 
-import { Metadata } from 'next/types';
 import Hero from '@/components/Hero'
 import { Container } from '@/components/layout'
 import { Content } from '@/components/Views/AboutPage'
 
-
 export const metadata: Metadata = {
-  title: "About Page | Next13 Starter",
-  description: "Get DATA SSR",
-};
+  title: 'About Page | Next13 Starter',
+  description: 'Get DATA SSR'
+}
 
 const page = () => {
   return (
