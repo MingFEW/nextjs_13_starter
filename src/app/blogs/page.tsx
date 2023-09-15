@@ -19,7 +19,7 @@ const page = async () => {
       <div className="inner py-6">
         <h1 className="mb-2 text-2xl font-bold">Blog</h1>
         <div className="page-desc pt-8">I will get Posts and show in a list (Nested Comp) - SSR</div>
-        <Suspense fallback={<p>LOADING...</p>}>
+        <Suspense fallback={<p>LOADING....</p>}>
           <BlogList dataList={dataList} />
         </Suspense>
       </div>
