@@ -30,7 +30,12 @@
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "excludedFiles": ["*.test.js", "*.js"],
-      "plugins": ["@typescript-eslint", "unused-imports", "import", "tailwindcss"],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "import",
+        "tailwindcss"
+      ],
       "rules": {
         "no-console": [
           "warn",
@@ -45,7 +50,12 @@
         "@next/next/no-img-element": 0, // We currently not using next/image because it isn't supported with SSG mode
         "@typescript-eslint/comma-dangle": 0, // Avoid conflict rule between Eslint and Prettier
         "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
-        "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"], // Overrides Airbnb configuration and enable no-restricted-syntax
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement"
+        ], // Overrides Airbnb configuration and enable no-restricted-syntax
         "import/no-unresolved": 0,
         "import/prefer-default-export": 0, // Named export is easier to refactor automatically
         "@typescript-eslint/no-unused-vars": 0,
@@ -60,7 +70,11 @@
         "import/order": [
           "error",
           {
-            "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
+            "groups": [
+              ["builtin", "external"],
+              "internal",
+              ["parent", "sibling", "index"]
+            ],
             "newlines-between": "always",
             "pathGroupsExcludedImportTypes": ["builtin"],
             "alphabetize": {
