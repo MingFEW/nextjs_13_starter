@@ -8,6 +8,8 @@ import Home from '@/app/page'
 describe('Render all static Elements on HomePage', () => {
   it('First Heading', () => {
     render(<Home />)
+
+    // Find Element to test
     const heading = screen.getByText(/Get started by editing/i)
 
     expect(heading).toBeInTheDocument()
@@ -15,6 +17,8 @@ describe('Render all static Elements on HomePage', () => {
 
   it('Show guide file text', () => {
     render(<Home />)
+
+    // Find Element to test
     const codeTag = screen.getByText('src/app/page.tsx')
 
     expect(codeTag).toBeInTheDocument()
@@ -23,6 +27,8 @@ describe('Render all static Elements on HomePage', () => {
 
   it('Show vercel.svg', () => {
     render(<Home />)
+
+    // Find Element to test
     const logoImage = screen.getByAltText(/Vercel Logo/i)
 
     expect(logoImage).toBeInTheDocument()
@@ -31,6 +37,8 @@ describe('Render all static Elements on HomePage', () => {
 
   it('Show next.svg', () => {
     render(<Home />)
+
+    // Find Element to test
     const nextImage = screen.getByAltText(/Next.js Logo/i)
 
     expect(nextImage).toBeInTheDocument()
