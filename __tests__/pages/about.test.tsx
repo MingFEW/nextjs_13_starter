@@ -10,7 +10,7 @@ import { setupServer } from 'msw/node'
 import AboutPage from '@/app/about/page'
 
 const apiBase = process.env.API_BASE
-const mockArticle = {
+const postMock = {
   userId: 1,
   id: 1,
   title: 'Title of the post ABC song',
@@ -19,7 +19,7 @@ const mockArticle = {
 // Setup REQUEST SERVER
 const handlers = [
   rest.get(`${apiBase}/posts/1`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(mockArticle))
+    return res(ctx.status(200), ctx.json(postMock))
   })
 ]
 const server = setupServer(...handlers)
@@ -33,7 +33,7 @@ afterEach(() => {
 })
 afterAll(() => server.close())
 
-// TESTING
+// *** TESTING ***
 describe('Render AboutPage', () => {
   it('First Heading', async () => {
     const jsx = await AboutPage()
@@ -66,7 +66,7 @@ describe('Render AboutPage', () => {
     const header = screen.queryByRole('heading', { level: 2 })
 
     expect(header).toBeInTheDocument()
-    expect(header).toHaveTextContent(mockArticle.title) // is the right content
+    expect(header).toHaveTextContent(postMock.title) // is the right content
     expect(header).toHaveClass('mb-4 text-2xl capitalize') // right style
   })
 

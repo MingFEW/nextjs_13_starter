@@ -13,7 +13,7 @@ function BlogList({ dataList }: IBlogListProps) {
           {dataList.map((itm: IPost) => {
             const { id, title, body } = itm
             return (
-              <div key={id} className="rounded-lg border border-[#222222] p-4">
+              <div key={id} className="post-item rounded-lg border border-[#222222] p-4">
                 <h4 className="mb-2 text-xl capitalize">{title}</h4>
                 <div className="mb-4 text-[#999999]">{body}</div>
                 <Link href={`/blogs/${id}`} className="italic text-[#dddddd] underline hover:text-white">
