@@ -86,9 +86,8 @@ describe('Render Post items', () => {
 
     // Find Element to test
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    const posts = container.querySelector('.post-item')
+    const posts = container.querySelectorAll('.post-item')
 
-    expect(posts).toBeInTheDocument()
-    // expect(posts).toHaveLength(postsMock.length)
+    expect(posts.length).toBe(postsMock.length)
   })
 })
